@@ -4,7 +4,12 @@ rover_width=100
 rover_height=100
 rover_x=50
 rover_y=50
-bg_img="mars.jpg"
+nasa_img=["nasa_img_1.jpeg", "nasa_img_2.jpeg", "nasa_img_3.jpg", "nasa_img_4.jpg", "nasa_img_5.jpg", "mars.jpg" ]
+random_no=Math.floor(Math.random()*nasa_img.length)
+console.log(random_no)
+
+
+bg_img=nasa_img[random_no]
 rover_img="rover.png"
 
 function add(){
@@ -45,5 +50,42 @@ function my_keydown(e){
         console.log("bottom key is pressed")
     }
 
+
+}
+
+function up(){
+    if (rover_y>=0){
+        rover_y=rover_y - 10
+        uploadbg()
+        uploadrover()
+        console.log("up")
+    }
+
+}
+function down(){
+    if (rover_y<=500){
+        rover_y=rover_y + 10
+        uploadbg()
+        uploadrover()
+        console.log("down")
+    }
+
+}
+function left(){
+    if (rover_x>=0){
+        rover_x=rover_x - 10
+        uploadbg()
+        uploadrover()
+        console.log("left")
+    }
+
+}
+function right(){
+    if (rover_x<=700){
+        rover_x=rover_x + 10
+        uploadbg()
+        uploadrover()
+        console.log("right")
+    }
 
 }
